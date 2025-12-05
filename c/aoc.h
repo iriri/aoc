@@ -24,8 +24,7 @@
    auto cat(sym, n) = __VA_ARGS__; \
    if ( \
       __builtin_choose_expr( \
-         (__builtin_classify_type(cat(sym, n)) ^ 4) <= 1 || \
-            __builtin_types_compatible_p(__typeof(cat(sym, n)), bool), \
+         (__builtin_classify_type(cat(sym, n)) ^ 4) <= 1, \
          !cat(sym, n), \
          cat(sym, n) < 0)) \
       goto fail; \
@@ -71,7 +70,10 @@ slurp(const char *fname) {
 
    for (size_t len = 0;;) {
       size_t len1 = try (read(fd, buf, cap - len));
-      if (len1 == 0) return (__typeof(slurp(fname))){buf, len};
+      if (len1 == 0) {
+          close(fd);
+          return (__typeof(slurp(fname))){buf, len};
+      }
 
       len += len1;
       if (len == cap) {

@@ -60,8 +60,7 @@ two(const char* str, const char* end) {
 
       auto n_x_str = parse_int(str, end);
       auto state1 = state + (n_x_str._0 * sign);
-      if (state1 > 0) zeroes += state1 / 100;
-      else {
+      if (state1 > 0) zeroes += state1 / 100; else {
          zeroes -= state1 / 100;
          if (state != 0) ++zeroes;
       }
