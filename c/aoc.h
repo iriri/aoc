@@ -78,8 +78,7 @@ slurp(const char *fname) {
       len += len1;
       if (len == cap) {
          try ((bool)!__builtin_umull_overflow(cap, 3, &cap));
-         cap /= 2;
-         buf = xrealloc(buf, cap);
+         buf = xrealloc(buf, (cap /= 2));
       }
    }
 fail:

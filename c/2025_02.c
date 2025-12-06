@@ -16,8 +16,7 @@ parse_u64(const char* str, const char* end) {
    while (str != end) {
       auto c = *str - '0';
       if (c < 0 || c > 9) break;
-      n *= 10;
-      n += c;
+      n = (n * 10) + c;
       ++str;
    }
    return (__typeof(parse_u64(str, end))){n, str};
