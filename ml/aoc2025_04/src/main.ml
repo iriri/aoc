@@ -14,8 +14,7 @@ let adj = Array.to_seq [|
    (1, 1);
    (-1, 1);
    (1, -1);
-   (-1, -1);
-|]
+   (-1, -1) |]
 
 let rec one lines =
    let len_y = Array.length lines in

@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="aoc/aoc.fsproj" />
+  <Project Path="aoc2025_07/aoc2025_07.fsproj" />
+  <Project Path="aoc2025_08/aoc2025_08.fsproj" />
+  <Project Path="aoc2025_09/aoc2025_09.fsproj" />
+  <Project Path="aoc2025_10/aoc2025_10.fsproj" />
+  <Project Path="aoc2025_11/aoc2025_11.fsproj" />
+  <Project Path="aoc2025_12/aoc2025_12.fsproj" />
+  <Project Path="pervs/pervs.fsproj" />
+</Solution>
